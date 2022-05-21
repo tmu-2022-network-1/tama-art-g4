@@ -1,6 +1,4 @@
-const getData = async () => {
-    const endpoint =
-      "https://script.google.com/macros/s/AKfycbxYb6A56yxS_gLG_AkWxMODItAzBrzYYT8CT3Yvxel3UlgNhau-sJnH1ZbFM-Ho_GcQkA/exec";
+const getData = async (endpoint) => {
     try {
       const response = await fetch(endpoint);
       if (response.ok) {
@@ -12,20 +10,30 @@ const getData = async () => {
     }
   };
   
+
   const renderResponse = (res) => {
-    document.getElementById("response").value = JSON.stringify(res, null, 2);
-  
-    document.getElementById("content").innerHTML = `<ul id="venues"></ul>`;
-  
-    const venues = document.getElementById("venues");
-  
-    for (const venue of res) {
-      const venueNode = document.createElement("li");
-      venueNode.innerHTML = `<h3><a href="venue/?id=${venue.id}">${venue.name}</a></h3>
-      ${venue.address}`;
-      venues.appendChild(venueNode);
+
+    const container = document.getElementById("container");
+    for (const event of res) {
+      // 新しいHTML要素を作成
+      const new_item = document.createElement("div");
+      new_item.classList.add("item");
+      new_item.innerHTML = `
+      
+      <div class="eventImage">
+        <img src="${event.thumbnail}">
+      </div>
+      <p class="eventTag">#${event.tag}</p>
+      <h3 class="eventName">${event.title}</h3>
+      <p class="eventVenue">${event.artist}</p>
+      
+      `;
+
+      // 指定した要素の中の末尾に挿入
+      container.appendChild(new_item);
     }
   };
   
-  getData().then((json) => renderResponse(json));
+  const endpoint = "https://script.google.com/macros/s/AKfycbxYb6A56yxS_gLG_AkWxMODItAzBrzYYT8CT3Yvxel3UlgNhau-sJnH1ZbFM-Ho_GcQkA/exec?sheet=events";
+  getData(endpoint).then((json) => renderResponse(json));
   
