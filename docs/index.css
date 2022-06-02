@@ -1,28 +1,183 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+    
+
 html {
     font-size: 62.5%;
 }
 
 body {
     font-size: 1.4em;
-    background: #fff;
-    font-family: -apple-system-body,BlinkMacSystemFont,Yu Gothic Medium,游ゴシック Medium,YuGothic,游ゴシック体,ヒラギノ角ゴ Pro W3,Hiragino Kaku Gothic Pro,メイリオ,Meiryo,Osaka,ＭＳ Ｐゴシック,MS PGothic,sans-serif;
+    background: #000;
+    font-family: 'Noto Sans JP',Noto Sans CJK JP,-apple-system-body,BlinkMacSystemFont,Yu Gothic Medium,游ゴシック Medium,YuGothic,游ゴシック体,ヒラギノ角ゴ Pro W3,Hiragino Kaku Gothic Pro,メイリオ,Meiryo,Osaka,ＭＳ Ｐゴシック,MS PGothic,sans-serif;
     -moz-osx-font-smoothing: grayscale;
     line-height: 1.65;
     padding: 0;
     margin: 0;
+    top: 0;
     vertical-align: baseline;
-    color: #333;
+    color: #fff;
 }
 
-Header{
-    top: 4rem;
-    right: 2.5rem;
-    left: 2.5rem;
+ul {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+li {
+    list-style: none;
+}
+
+#header{
+    background: #fff;
+
+    top: 0;
+    right: 0;
+    left: 0;
+
+    /* height: 20vh; */
+
+    padding: 7.5vh 0 0 0;
 }
 
 #title{
 
 }
+
+.leftFixed {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 10vw;
+    z-index: 99;
+    font-size: 1.6rem;
+}
+
+.rightFixed{
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 10vw;
+    z-index: 99;
+    font-size: 1.6rem;
+}
+
+.leftText{
+    position: absolute;
+    top: 50%;
+    left: 48%;
+    letter-spacing: 0.3rem;
+    z-index: 1000;
+    white-space: nowrap;
+
+    -ms-transform: translate(-50%, -50%) rotate(-90deg);
+    transform: translate(-50%, -50%) rotate(-90deg);
+    z-index: 10;
+    /* -o-transition: all 0.8s cubic-bezier(0.76, 0.07, 0.24, 0.96);
+    transition: all 0.8s cubic-bezier(0.76, 0.07, 0.24, 0.96); */
+    mix-blend-mode: exclusion;
+}
+
+.rightText{
+    position: absolute;
+    top: 50%;
+    left: 48%;
+    letter-spacing: 0.3rem;
+    z-index: 1000;
+    white-space: nowrap;
+
+    -ms-transform: translate(-50%, -50%) rotate(90deg);
+    transform: translate(-50%, -50%) rotate(90deg);
+    /* -o-transition: all 0.8s cubic-bezier(0.76, 0.07, 0.24, 0.96);
+    transition: all 0.8s cubic-bezier(0.76, 0.07, 0.24, 0.96); */
+    mix-blend-mode: exclusion;
+}
+
+.icon{
+    position: absolute;
+    width: 60px;
+    top: 6%;
+    left: 30%;
+    z-index: 1000;
+    white-space: nowrap;
+    
+    transition: 0.6s;
+    transform-origin:center;
+    margin: 0;
+
+    fill:#988C4C;
+}
+.icon:hover {
+    transform: rotate(360deg) scale(1.2); 
+    fill: rgb(221, 221, 221);
+    /* filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.25)); */
+}
+
+.thumbnailFixed{
+    position: fixed;
+
+    top: 0;
+    bottom: 0;
+    left: 10vw;
+    margin: auto;
+
+    /* top : 10vw;
+    left: 10vw; */
+
+    z-index: 99;
+    height: 70vh;
+    width: 35vw;
+    background: rgb(255, 0, 0);
+}
+.containerFixed{
+    position: absolute;
+
+    /* top: 0;
+    bottom: 0; */
+    right: 10vw;
+    margin: auto;
+
+    /* top : 10vw;
+    left: 10vw; */
+
+    z-index: 99;
+    /* height: 70vh; */
+    width: 40vw;
+    background: rgb(255, 0, 0);
+}
+
+.navbar {
+    padding: 0 5vw;
+}
+.navbarItem a{
+    text-decoration: none;
+    font-weight: bold;
+    color: #000;
+
+    display: inline-block;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.pageTitle{
+    display: flex;
+    justify-content: right;
+    font-weight: bold;
+    font-size:8vh;
+    color:rgba(0, 0, 0, 0);
+    padding: 5vh 5vw 2vw 5vw ;
+    -webkit-text-stroke: 1px #000;
+
+
+}
+
+
 
 
 .events{
@@ -32,7 +187,10 @@ Header{
 #container{
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
+
+    /* width: 75vw;
+    max-width: 1000px; */
+    margin: 30px auto;
 }
 
 .item{
