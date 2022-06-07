@@ -6,11 +6,13 @@ const id = params.get("id");
 const renderResponse = (json) => {
   const items = [];
 
+
   for (const event of json.filter(d => d.title !== '')) {
 
     items[event.id-1] = document.createElement("div");
 
     items[event.id-1].classList.add("item");
+
     if((event.id-1)%2 == 0){
       items[event.id-1].classList.add("left-item");
     }
@@ -26,11 +28,12 @@ const renderResponse = (json) => {
         ${event.title}
       </div>
     </a>
-    
+
     `;
   }
   makeLayout(items);
 };
+
 
 const makeLayout = (array) => {
   const container = document.getElementById("container");
@@ -41,6 +44,7 @@ const makeLayout = (array) => {
 
   for(let i = 0; i < array.length; i++){
     container.appendChild(array[i]);
+
   }
 }
 
@@ -51,7 +55,9 @@ const renderEvent = (json) => {
     for (const eventLink of eventLinks) {
       eventLink.onmouseover = (e) => {
         console.log("生きてます！");
+
         document.querySelector('.thumbnail-container').style.backgroundImage = e.target.style.backgroundImage;
+
       };
     }
     return;
