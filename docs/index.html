@@ -4,8 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/navigation-window.css">
+    <link rel="stylesheet" type="text/css" href="css/side-bar.css">
     <link href="http://fonts.googleapis.com/earlyaccess/notosansjp.css">
+
     <link rel="icon" href="images/favicon.ico" />
     <title>Tamart</title>
   </head>
@@ -36,7 +41,7 @@
       </div>
     </div>
 
-    <div class="leftFixed">
+    <div class="left-fixed">
       <a href="sample2.html">
         <div class="icon">
           <svg version="1.1" id="レイヤー_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
@@ -49,16 +54,36 @@
           </svg>
         </div>
       </a>
-      <div class="leftText">
+      <div class="left-text">
         - 日本画 -
       </div>
     </div>
-    <div class="rightFixed">
-      <div class="rightText">
+    <div class="right-fixed">
+      <div class="right-text">
         - other tag -
       </div>
     </div>
+    <nav id="g-nav">
+      <div id="g-nav-list">
+        <fieldset class="radio-button-field">
+          <input id="item-1" class="radio-inline__input" type="radio" name="accessible-radio" value="item-1" checked="checked"/>
+          <label class="radio-inline__label" for="item-1">
+              全てのイベント
+          </label>
+          <input id="item-2" class="radio-inline__input" type="radio" name="accessible-radio" value="item-2"/>
+          <label class="radio-inline__label" for="item-2">
+              日本画
+          </label>
+          <input id="item-3" class="radio-inline__input" type="radio" name="accessible-radio" value="item-3"/>
+          <label class="radio-inline__label" for="item-3">
+              アニメーション
+          </label>
+        </fieldset>
+      </div>
+    </nav>
 
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="js/navigation.js"></script>
     <script src="index.js" type="module" defer></script>
   </body>
 </html>
