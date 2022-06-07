@@ -1,29 +1,72 @@
 import { getData } from './modules/getdata.js';
 
-const renderResponse = (json) => {
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
 
-  const container = document.getElementById("container");
-  for (const event of json) {
-    // 新しいHTML要素を作成
-    const new_item = document.createElement("div");
-    new_item.classList.add("item");
-    new_item.innerHTML = `
-    
-    <div class="eventImage">
-      <img src="${event.thumbnail}">
-    </div>
-    <p class="eventTag">#${event.tag}</p>
-    <h3 class="eventName">
-      <a href="event/?id=${event.id}">${event.title}</a>
-    </h3>
-    <p class="eventVenue">${event.artist}</p>
+const renderResponse = (json) => {
+  const items = [];
+
+  for (const event of json.filter(d => d.title !== '')) {
+
+    items[event.id-1] = document.createElement("div");
+
+    items[event.id-1].classList.add("item");
+    if((event.id-1)%2 == 0){
+      items[event.id-1].classList.add("left-item");
+    }
+    if(event.thumbnail == ''){
+      event.thumbnail = 'images/dummy.jpg';
+    }
+    items[event.id-1].innerHTML = `
+    <a href="event/?id=${event.id}">
+      <figure class="eventImage">
+        <img src="${event.thumbnail}">
+      </figure>
+      <div class="eventName">
+        ${event.title}
+      </div>
+    </a>
     
     `;
+  }
+  makeLayout(items);
+};
 
-    // 指定した要素の中の末尾に挿入
-    container.appendChild(new_item);
+const makeLayout = (array) => {
+  const container = document.getElementById("container");
+
+  while(container.firstChild){
+    container.removeChild(container.firstChild);
+  }
+
+  for(let i = 0; i < array.length; i++){
+    container.appendChild(array[i]);
+  }
+}
+
+const renderEvent = (json) => {
+  if (!id) {
+    renderResponse(json);
+    const eventLinks = document.querySelectorAll('.item');
+    for (const eventLink of eventLinks) {
+      eventLink.onmouseover = (e) => {
+        console.log("生きてます！");
+        document.querySelector('.thumbnail-container').style.backgroundImage = e.target.style.backgroundImage;
+      };
+    }
+    return;
+  }
+  const event = json.find((d) => d.id === id);
+  if (event) {
+    document.title = `${event.title} | tama.potari`;
+    document.getElementById("content").innerHTML = `
+      <h1>${event.title}</h1>
+      <a href="../venue/?id=${event.venueId}">${event.venue}</a>
+      <figure>
+        <img src="${event.thumbnail}" alt="${event.title}">
+      </figure>`;
   }
 };
   
-getData("events").then((json) => renderResponse(json));
+getData("events").then((json) => renderEvent(json));
   
