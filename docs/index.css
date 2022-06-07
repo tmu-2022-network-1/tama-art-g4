@@ -76,15 +76,22 @@ li {
     /* width: 75vw;
     max-width: 1000px; */
     margin: 30px auto;
+
+
+}
+
+#left-container,#right-container{
+    width: 50%;
+    float: left;
 }
 
 .item{
     /* display: flex; */
     /* flex-direction: column; */
-    margin-right: 2%;
+    /* margin-right: 2%; */
     
     /* position: absolute; */
-    width: 18%;
+    width: 100%;
     
     /* background: #FFFFFF; */
     margin-bottom: 40px;
