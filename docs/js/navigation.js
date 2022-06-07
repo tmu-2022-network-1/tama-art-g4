@@ -6,7 +6,7 @@ $(".right-text").click(function () {//ボタンがクリックされたら
         $("#g-nav").toggleClass('panelactive');
     }else{
         $(this).toggleClass('active');
-        (this).textContent = '- Other Tag -';
+        (this).textContent = '- other tag -';
         $("#g-nav").removeClass('panelactive');
     }
 });
