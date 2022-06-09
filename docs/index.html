@@ -22,14 +22,14 @@
     <div id="header">
       <nav class="navbar">
         <ul>
-          <li class="navbarItem"><a href="/">イベント</a></li>
-          <li class="navbarItem"><a href="event">エリア別</a></li>
+          <li class="navbarItem"><a href="index.html">イベント</a></li>
+          <!-- <li class="navbarItem"><a href="event">エリア別</a></li> -->
           <li class="navbarItem"><a href="venue">検索</a></li>
           <li class="navbarItem"><a href="venue">Tamartとは</a></li>
         </ul>
       </nav>
       <div>
-        <p class="pageTitle">全てのイベント</p>
+        <p id="pageTitle">全てのイベント</p>
       </div>
     </div>
 
@@ -39,6 +39,14 @@
       <div id="right-container"></div>
     </div>
 
+    <!-- <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <strong>Tamaart</strong> by group4.
+        </p>
+      </div>
+    </footer> -->
+
     <div class="thumbnail-fixed">
       <figure class="thumbnail-container">
         <!-- <img src="images/dummy.jpg"> -->
@@ -46,7 +54,7 @@
     </div>
 
     <div class="left-fixed">
-      <a href="sample2.html">
+      <a href="index.html">
         <div class="icon">
           <svg version="1.1" id="レイヤー_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
             y="0px" viewBox="0 0 231.6 192.2" style="enable-background:new 0 0 231.6 192.2;" xml:space="preserve">
@@ -70,21 +78,59 @@
     <nav id="g-nav">
       <div id="g-nav-list">
         <fieldset class="radio-button-field">
-          <input id="item-1" class="radio-inline__input" type="radio" name="accessible-radio" value="item-1" checked="checked"/>
-          <label class="radio-inline__label" for="item-1">
+          <input id="all" class="radio-inline__input" type="radio" name="accessible-radio" value="all" checked/>
+          <label class="radio-inline__label" for="all">
               全てのイベント
           </label>
-          <input id="item-2" class="radio-inline__input" type="radio" name="accessible-radio" value="item-2"/>
-          <label class="radio-inline__label" for="item-2">
+          <input id="graphic" class="radio-inline__input" type="radio" name="accessible-radio" value="graphic"/>
+          <label class="radio-inline__label" for="graphic">
+              グラフィック
+          </label>
+          <input id="comic" class="radio-inline__input" type="radio" name="accessible-radio" value="comic"/>
+          <label class="radio-inline__label" for="comic">
+              コミック
+          </label>
+          <input id="kaiga" class="radio-inline__input" type="radio" name="accessible-radio" value="kaiga"/>
+          <label class="radio-inline__label" for="kaiga">
+              絵画
+          </label>
+          <input id="nihonga" class="radio-inline__input" type="radio" name="accessible-radio" value="nihonga"/>
+          <label class="radio-inline__label" for="nihonga">
               日本画
           </label>
-          <input id="item-3" class="radio-inline__input" type="radio" name="accessible-radio" value="item-3"/>
-          <label class="radio-inline__label" for="item-3">
+          <input id="hanga" class="radio-inline__input" type="radio" name="accessible-radio" value="hanga"/>
+          <label class="radio-inline__label" for="hanga">
+              版画
+          </label>
+          <input id="tyokoku" class="radio-inline__input" type="radio" name="accessible-radio" value="tyokoku"/>
+          <label class="radio-inline__label" for="tyokoku">
+              彫刻
+          </label>
+          <input id="kenchiku" class="radio-inline__input" type="radio" name="accessible-radio" value="kenchiku"/>
+          <label class="radio-inline__label" for="kenchiku">
+              建築
+          </label>
+          <input id="animation" class="radio-inline__input" type="radio" name="accessible-radio" value="animation"/>
+          <label class="radio-inline__label" for="animation">
               アニメーション
           </label>
+          <input id="movie" class="radio-inline__input" type="radio" name="accessible-radio" value="movie"/>
+          <label class="radio-inline__label" for="movie">
+              映像
+          </label>
+          <input id="performance" class="radio-inline__input" type="radio" name="accessible-radio" value="performance"/>
+          <label class="radio-inline__label" for="performance">
+              パフォーマンス
+          </label>
+          <input id="other" class="radio-inline__input" type="radio" name="accessible-radio" value="other"/>
+          <label class="radio-inline__label" for="other">
+              その他
+          </label>
         </fieldset>
+        
       </div>
     </nav>
+
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="js/navigation.js"></script>

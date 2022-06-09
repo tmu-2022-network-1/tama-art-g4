@@ -11,7 +11,7 @@
     flex-shrink: 0;
 }
 
-.pageTitle{
+#pageTitle{
     display: flex;
     justify-content: right;
     font-weight: bold;
