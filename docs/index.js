@@ -2,9 +2,9 @@ import { getData } from './modules/getdata.js';
 
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
+const items = [];
 
 const renderResponse = (json) => {
-  const items = [];
 
 
   for (const event of json.filter(d => d.title !== '')) {
@@ -12,8 +12,9 @@ const renderResponse = (json) => {
     items[event.id-1] = document.createElement("div");
 
     items[event.id-1].classList.add("item");
+    items[event.id-1].classList.add(event.tag_js);
 
-    if((event.id-1)%2 == 0){
+    if((event.id-1)%2 !== 0){
       items[event.id-1].classList.add("left-item");
     }
     if(event.thumbnail == ''){
@@ -32,7 +33,47 @@ const renderResponse = (json) => {
     `;
   }
   makeLayout(items);
+
 };
+
+$(".radio-inline__input").click(function () {//ラジオボタンがクリックされたら
+  console.log("hello");
+  
+  let elements = document.getElementsByName('accessible-radio');
+  let len = elements.length;
+  console.log(len);
+  let checkValue = '';
+
+  for (let i = 0; i < len; i++){
+      if (elements.item(i).checked){
+          //どうして（）だと動作したのか分かってない
+          checkValue = elements.item(i).value;
+      }
+  }
+  console.log(checkValue);
+
+  if(checkValue == 'all'){
+    var newArray = items;
+  }else{
+    var newArray = items.filter(function(item) {
+      return item.classList.contains(checkValue) == true;
+    });
+  }
+  for(var i = 0; i < newArray.length; i++){
+    newArray[i].classList.remove("left-item");
+    if(i%2 !== 0){
+      newArray[i].classList.add("left-item");
+    }
+  }
+  makeLayout(newArray);
+
+  const pageTitle = document.getElementById("pageTitle");
+  pageTitle.innerHTML = `${checkValue}`;
+
+  
+});
+
+
 
 
 const makeLayout = (array) => {
@@ -74,5 +115,5 @@ const renderEvent = (json) => {
   }
 };
   
-getData("events").then((json) => renderEvent(json));
+getData("group4").then((json) => renderEvent(json));
   

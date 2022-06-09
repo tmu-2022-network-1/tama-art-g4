@@ -53,10 +53,23 @@
     cursor: pointer;
 }
 
-.right-text:hover{
-    transform: translate(-50%, -50%) scale(1.2) rotate(90deg);
-    
-    /* letter-spacing: 0.5em; */
+.right-text:active{
+    animation: zoom-in-anim 0.5s;
+}
+
+@keyframes zoom-in-anim {
+	0% {
+        letter-spacing: 0.3rem;
+        transform: translate(-50%, -50%) rotate(90deg);
+	}
+    50%{
+        letter-spacing: -0.5rem;
+        transform: translate(-50%, -50%) rotate(90deg);
+    }
+	100% {
+        letter-spacing: 0.3rem;
+        transform: translate(-50%, -50%) rotate(90deg);
+	}
 }
 .right-text:active{
     /* letter-spacing: 0.3rem; */
