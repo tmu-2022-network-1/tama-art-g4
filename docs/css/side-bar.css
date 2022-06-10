@@ -44,6 +44,7 @@
     z-index: 1000;
     white-space: nowrap;
 
+    /* transform-origin:center; */
     transform: translate(-50%, -50%) rotate(90deg);
     /* -o-transition: all 0.8s cubic-bezier(0.76, 0.07, 0.24, 0.96);*/
     transition: all 0.8s cubic-bezier(0.76, 0.07, 0.24, 0.96);
@@ -53,27 +54,13 @@
     cursor: pointer;
 }
 
-.right-text:active{
-    animation: zoom-in-anim 0.5s;
+.right-text:hover{
+    letter-spacing: 0.5rem;
 }
 
-@keyframes zoom-in-anim {
-	0% {
-        letter-spacing: 0.3rem;
-        transform: translate(-50%, -50%) rotate(90deg);
-	}
-    50%{
-        letter-spacing: -0.5rem;
-        transform: translate(-50%, -50%) rotate(90deg);
-    }
-	100% {
-        letter-spacing: 0.3rem;
-        transform: translate(-50%, -50%) rotate(90deg);
-	}
-}
-.right-text:active{
-    /* letter-spacing: 0.3rem; */
-}
+/* .right-text:active{
+    letter-spacing: 0.3rem;
+} */
 
 
 .icon{
