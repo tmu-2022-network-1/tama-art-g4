@@ -21,8 +21,6 @@ const renderResponse = (json) => {
       event.thumbnail = 'images/dummy.jpg';
     }
 
-    // items[event.id-1].style="background-image:url(${event.thumbnail})"
-
     items[event.id-1].innerHTML = `
     <a href="event/?id=${event.id}">
       <figure class="eventImage" style="background-image:url(${event.thumbnail}); background-size: 100%">
