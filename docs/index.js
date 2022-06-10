@@ -12,7 +12,11 @@ const renderResponse = (json) => {
     items[event.id-1] = document.createElement("div");
 
     items[event.id-1].classList.add("item");
-    items[event.id-1].classList.add(event.tag_js);
+    if(event.tag_js !== ''){
+      items[event.id-1].classList.add(event.tag_js);
+    }else{
+      items[event.id-1].classList.add('other');
+    }
 
     if((event.id-1)%2 !== 0){
       items[event.id-1].classList.add("left-item");
