@@ -6,7 +6,6 @@ const items = [];
 
 const renderResponse = (json) => {
 
-
   for (const event of json.filter(d => d.title !== '')) {
 
     items[event.id-1] = document.createElement("div");
@@ -26,7 +25,7 @@ const renderResponse = (json) => {
     }
     items[event.id-1].innerHTML = `
     <a href="event/?id=${event.id}">
-      <figure class="eventImage">
+      <figure class="eventImage" id="${event.id}">
         <img src="${event.thumbnail}" class="image">
       </figure>
     </a>
@@ -99,8 +98,12 @@ const renderEvent = (json) => {
     for (const eventLink of eventLinks) {
       eventLink.onmouseover = (e) => {
         console.log("生きてます！");
-
         document.querySelector('.thumbnail-container').src = e.target.src;
+        
+        const eventId = json.find((d) => d.id === e.currentTarget.id);
+        console.log(eventId);
+        document.getElementById("thumbnail-title").innerHTML=`${eventId.title}`;
+        document.getElementById("thumbnail-comment").innerHTML=`${eventId.comment}`;
 
       };
     }
