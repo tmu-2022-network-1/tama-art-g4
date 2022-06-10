@@ -20,10 +20,11 @@ const renderResponse = (json) => {
     if(event.thumbnail == ''){
       event.thumbnail = 'images/dummy.jpg';
     }
+
     items[event.id-1].innerHTML = `
     <a href="event/?id=${event.id}">
       <figure class="eventImage">
-        <img src="${event.thumbnail}">
+        <img src="${event.thumbnail}" style="background-image:url(${event.thumbnail})">
       </figure>
       <div class="eventName">
         ${event.title}
