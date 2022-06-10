@@ -24,16 +24,16 @@ const renderResponse = (json) => {
     if(event.thumbnail == ''){
       event.thumbnail = 'images/dummy.jpg';
     }
-
     items[event.id-1].innerHTML = `
     <a href="event/?id=${event.id}">
-      <figure class="eventImage" style="background-image:url(${event.thumbnail}); background-size: 100%">
-        <!-- <img src="${event.thumbnail}"> -->
+      <figure class="eventImage">
+        <img src="${event.thumbnail}" class="image">
       </figure>
-      <div class="eventName">
-        ${event.title}
-      </div>
     </a>
+    <div class="eventName">
+      ${event.title}
+    </div>
+    
 
     `;
   }
@@ -79,8 +79,6 @@ $(".radio-inline__input").click(function () {//ラジオボタンがクリック
 });
 
 
-
-
 const makeLayout = (array) => {
   const container = document.getElementById("container");
 
@@ -97,12 +95,12 @@ const makeLayout = (array) => {
 const renderEvent = (json) => {
   if (!id) {
     renderResponse(json);
-    const eventLinks = document.querySelectorAll('.item');
+    const eventLinks = document.querySelectorAll('.eventImage');
     for (const eventLink of eventLinks) {
       eventLink.onmouseover = (e) => {
         console.log("生きてます！");
 
-        document.querySelector('.thumbnail-container').style.backgroundImage = e.target.style.backgroundImage;
+        document.querySelector('.thumbnail-container').src = e.target.src;
 
       };
     }
