@@ -10,7 +10,7 @@ html {
 
 body {
     font-size: 1.4em;
-    background: #000;
+    background: #171717;
     font-family: 'Noto Sans JP',Noto Sans CJK JP,-apple-system-body,BlinkMacSystemFont,Yu Gothic Medium,游ゴシック Medium,YuGothic,游ゴシック体,ヒラギノ角ゴ Pro W3,Hiragino Kaku Gothic Pro,メイリオ,Meiryo,Osaka,ＭＳ Ｐゴシック,MS PGothic,sans-serif;
     -moz-osx-font-smoothing: grayscale;
     line-height: 1.65;
@@ -18,7 +18,7 @@ body {
     margin: 0;
     top: 0;
     vertical-align: baseline;
-    color: #fff;
+    color: #F5F5F5;
 }
 
 ul {
@@ -31,17 +31,11 @@ li {
 }
 
 #header{
-    background: #fff;
+    background: #F5F5F5;
 
     top: 0;
     right: 0;
     left: 0;
 
-    /* height: 20vh; */
-
     padding: 7.5vh 0 0 0;
-}
-
-#title{
-
 }
