@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" type="text/css" href="css/header.css">
     <link rel="stylesheet" type="text/css" href="css/container.css">
+    <link rel="stylesheet" type="text/css" href="css/event-detail-window.css">
     <link rel="stylesheet" type="text/css" href="css/navigation-window.css">
     <link rel="stylesheet" type="text/css" href="css/side-bar.css">
     <link href="http://fonts.googleapis.com/earlyaccess/notosansjp.css">
@@ -16,15 +17,12 @@
     <title>Tamart</title>
   </head>
   <body>
-    
-    <!-- <a href="/">TOP</a> -->
 
     <div id="header">
       <nav class="navbar">
         <ul>
           <li class="navbarItem"><a href="index.html">イベント</a></li>
-          <!-- <li class="navbarItem"><a href="event">エリア別</a></li> -->
-          <li class="navbarItem"><a href="venue">検索</a></li>
+          <!-- <li class="navbarItem"><a href="venue">検索</a></li> -->
           <li class="navbarItem"><a href="venue">Tamartとは</a></li>
         </ul>
       </nav>
@@ -32,6 +30,7 @@
         <p id="pageTitle">全てのイベント</p>
       </div>
     </div>
+    <div class="hide"></div>
 
 
     <div id="container" class="containerFixed">
@@ -39,20 +38,12 @@
       <div id="right-container"></div>
     </div>
 
-    <!-- <footer class="footer">
-      <div class="content has-text-centered">
-        <p>
-          <strong>Tamaart</strong> by group4.
-        </p>
-      </div>
-    </footer> -->
-
     <div class="thumbnail-fixed">
       <div class="event-thumbnail">
-        <img src="images/dummy.jpg" class="thumbnail-container">
+        <img src="" class="thumbnail-container">
       </div>
-      <div id="thumbnail-title">aa</div>
-      <div id="thumbnail-comment">bb</div>
+      <div id="thumbnail-title"></div>
+      <div id="thumbnail-comment"></div>
     </div>
 
     <div class="left-fixed">
@@ -132,6 +123,51 @@
         
       </div>
     </nav>
+
+    <div id="close-button" class="close">
+      <?xml version="1.0" encoding="UTF-8"?>
+      <svg id="_イヤー_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 79.55 79.55">
+        <line x1="5" y1="5" x2="74.55" y2="74.55" style="fill:none; stroke:#fff; stroke-linecap:round; stroke-miterlimit:10; stroke-width:8px;"/>
+        <line x1="74.55" y1="5" x2="5" y2="74.55" style="fill:none; stroke:#fff; stroke-linecap:round; stroke-miterlimit:10; stroke-width:8px;"/>
+      </svg>
+    </div>
+
+    <div id="event-detail">
+      <div class="event-detail-list">
+        <div class="detail">
+          <div class="event-detail-left">アーティスト</div>
+          <div id="artist" class="event-detail-right">わわ</div>
+        </div>
+        <div class="detail">
+          <div class="event-detail-left">スケジュール</div>
+          <div id="schedule" class="event-detail-right">わわ</div>
+        </div>
+        <div class="detail">
+          <div class="event-detail-left">入場料</div>
+          <div id="admission" class="event-detail-right">無料</div>
+        </div>
+        <div class="detail">
+          <div class="event-detail-left">イベントURL</div>
+          <a href="" id="eventurl" class="event-detail-right">URL!</a>
+        </div>
+        <div class="detail">
+          <div class="event-detail-left">会場</div>
+          <div id="venue" class="event-detail-right">どこそこ</div>
+        </div>
+        <div id="address" class="detail">
+          <div class="event-detail-left">住所</div>
+          <div class="event-detail-right">どこそこ</div>
+        </div>
+        <div id="station" class="detail">
+          <div class="event-detail-left">最寄り駅</div>
+          <div class="event-detail-right">どこそこ</div>
+        </div>
+        <div id="phone" class="detail">
+          <div class="event-detail-left">電話番号</div>
+          <div class="event-detail-right">000-0000-000</div>
+        </div>
+      </div>
+    </div>
 
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>

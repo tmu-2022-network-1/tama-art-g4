@@ -6,6 +6,11 @@ const items = [];
 
 const renderResponse = (json) => {
 
+  const firstId = json.find((d) => d.id === "1");
+  document.querySelector('.thumbnail-container').src = firstId.thumbnail;
+  document.getElementById("thumbnail-title").innerHTML=`${firstId.title}`;
+  document.getElementById("thumbnail-comment").innerHTML=`${firstId.comment}`;
+
   for (const event of json.filter(d => d.title !== '')) {
 
     items[event.id-1] = document.createElement("div");
@@ -24,11 +29,9 @@ const renderResponse = (json) => {
       event.thumbnail = 'images/dummy.jpg';
     }
     items[event.id-1].innerHTML = `
-    <a href="event/?id=${event.id}">
-      <figure class="eventImage" id="${event.id}">
-        <img src="${event.thumbnail}" class="image">
-      </figure>
-    </a>
+    <figure class="eventImage" id="${event.id}">
+      <img src="${event.thumbnail}" class="image">
+    </figure>
     <div class="eventName">
       ${event.title}
     </div>
@@ -41,7 +44,6 @@ const renderResponse = (json) => {
 };
 
 $(".radio-inline__input").click(function () {//ラジオボタンがクリックされたら
-  console.log("hello");
   
   let elements = document.getElementsByName('accessible-radio');
   let len = elements.length;
@@ -95,6 +97,7 @@ const renderEvent = (json) => {
   if (!id) {
     renderResponse(json);
     const eventLinks = document.querySelectorAll('.eventImage');
+
     for (const eventLink of eventLinks) {
       eventLink.onmouseover = (e) => {
         console.log("生きてます！");
@@ -106,18 +109,41 @@ const renderEvent = (json) => {
         document.getElementById("thumbnail-comment").innerHTML=`${eventId.comment}`;
 
       };
+
+      eventLink.onmousedown = (e) => {
+        const eventId = json.find((d) => d.id === e.currentTarget.id);
+        console.log("いえ〜い");
+        $("#event-detail").addClass('windowactive');
+        $("#close-button").addClass('windowactive');
+
+        // html書き換え！！
+        document.getElementById("artist").innerHTML=`
+        ${eventId.artist}
+        `;
+
+        var startYear = new Date(eventId.startDate).getFullYear();
+        var startMonth = new Date(eventId.startDate).getMonth();
+        var startDate = new Date(eventId.startDate).getDate();
+        var endYear = new Date(eventId.endDate).getFullYear();
+        var endMonth = new Date(eventId.endDate).getMonth();
+        var endDate = new Date(eventId.endDate).getDate();
+
+        document.getElementById("schedule").innerHTML=`
+        ${startYear}年${startMonth+1}月${startDate}日〜${endYear}年${endMonth+1}月${endDate}日
+        `;
+        document.getElementById("admission").innerHTML=`
+        ${eventId.admission}
+        `;
+        document.getElementById("eventurl").innerHTML=`
+        ${eventId.url}
+        `;
+        document.getElementById("eventurl").href=eventId.url;
+        document.getElementById("venue").innerHTML=`
+        会場情報！
+        `;
+      }
     }
     return;
-  }
-  const event = json.find((d) => d.id === id);
-  if (event) {
-    document.title = `${event.title} | tama.potari`;
-    document.getElementById("content").innerHTML = `
-      <h1>${event.title}</h1>
-      <a href="../venue/?id=${event.venueId}">${event.venue}</a>
-      <figure>
-        <img src="${event.thumbnail}" alt="${event.title}">
-      </figure>`;
   }
 };
   
