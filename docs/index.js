@@ -46,6 +46,7 @@ const renderResponse = (json) => {
 $(".radio-inline__input").click(function () {//ラジオボタンがクリックされたら
   
   let elements = document.getElementsByName('accessible-radio');
+  // console.log(elements);
   let len = elements.length;
   console.log(len);
   let checkValue = '';
@@ -76,7 +77,10 @@ $(".radio-inline__input").click(function () {//ラジオボタンがクリック
   const pageTitle = document.getElementById("pageTitle");
   pageTitle.innerHTML = `${checkValue}`;
 
-  
+  var id =  $('[name="accessible-radio"]:checked').attr('id');
+  var JanText = $('label[for="' + id + '"]').text();
+  const leftText = document.getElementById("leftText");
+  leftText.innerHTML = `- ${JanText} -`;
 });
 
 
@@ -100,11 +104,11 @@ const renderEvent = (json) => {
 
     for (const eventLink of eventLinks) {
       eventLink.onmouseover = (e) => {
-        console.log("生きてます！");
+        // console.log("生きてます！");
         document.querySelector('.thumbnail-container').src = e.target.src;
         
         const eventId = json.find((d) => d.id === e.currentTarget.id);
-        console.log(eventId);
+        // console.log(eventId);
         document.getElementById("thumbnail-title").innerHTML=`${eventId.title}`;
         document.getElementById("thumbnail-comment").innerHTML=`${eventId.comment}`;
 
