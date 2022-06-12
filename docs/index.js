@@ -74,13 +74,15 @@ $(".radio-inline__input").click(function () {//ラジオボタンがクリック
   }
   makeLayout(newArray);
 
-  const pageTitle = document.getElementById("pageTitle");
-  pageTitle.innerHTML = `${checkValue}`;
 
   var id =  $('[name="accessible-radio"]:checked').attr('id');
   var JanText = $('label[for="' + id + '"]').text();
+
+  const pageTitle = document.getElementById("pageTitle");
+  pageTitle.innerHTML = `${JanText}`;
+
   const leftText = document.getElementById("leftText");
-  leftText.innerHTML = `- ${JanText} -`;
+  leftText.innerHTML = `- ${checkValue} -`;
 });
 
 
