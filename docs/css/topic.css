@@ -1,0 +1,23 @@
+.main-image{
+    position: absolute;
+
+    top: 70vh;
+    bottom: 0;
+    left: 10vw;
+    margin: auto;
+    z-index: 99;
+    height: 60vh;
+    width: 40vw;
+    background: rgb(255, 0, 0);
+}
+
+.topic-text{
+    position: absolute;
+    top: 40vh;
+    right: 4vw;
+    width: 40vw;
+}
+
+.topic-title{
+    font-size: 1.6rem;
+}
