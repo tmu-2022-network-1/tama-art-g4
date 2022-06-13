@@ -12,6 +12,8 @@
 
     box-shadow: 0 0 10px rgb(0 0 0 / 10%);
 	background:#F5F5F5;
+    overflow-y: scroll;
+    overflow-x: hidden;
 
 	transition: all 0.6s cubic-bezier(0.76, 0.07, 0.24, 0.96);
 }
@@ -45,8 +47,9 @@
 .event-detail-list{
     /* top:10vh; */
     width: 32vw;
-    height: 100%;
+    /* height: 100%; */
     margin-top:10vh;
+    margin-bottom:10vh;
     margin-left:auto;
     margin-right: auto;
     /* position: absolute; */
@@ -60,6 +63,10 @@
     border-bottom: 1px solid #ddd;
 }
 
+.detail.lastDetail{
+    border: none;
+}
+
 .event-detail-left{
     width: 30%;
     font-weight: bold;
@@ -71,6 +78,12 @@
     overflow-wrap: break-word;
 }
 
+.venue-detai{
+    padding: 12px;
+    margin: 8px 0 0 0;
+    border-radius: 4px;
+    background-color: rgb(226, 226, 226);
+}
 
 #eventurl{
     color: #988C4C;
@@ -78,3 +91,18 @@
 #eventurl.visited{
     color: #988C4C;
 }
+
+#venueurl{
+    color: #988C4C;
+}
+#venueurl.visited{
+    color: #988C4C;
+}
+
+.gmap{
+    margin: 12px 0 0 0;
+    height: 25vh;
+}
+
+
+
