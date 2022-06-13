@@ -16,6 +16,7 @@
     justify-content: right;
     font-weight: bold;
     font-size:8vh;
+    letter-spacing: 0.3rem;
     color:rgba(0, 0, 0, 0);
     padding: 5vh 5vw 2vw 5vw ;
     -webkit-text-stroke: 1px #000;

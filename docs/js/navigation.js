@@ -5,6 +5,7 @@ $(".right-text").click(function () {//ボタンがクリックされたら
     }else{
         (this).textContent = '- close -';
     }
+    $("#right-fixed").toggleClass('.right-fixed-z-index');
     $(".right-text").toggleClass('active');
     $("#g-nav").toggleClass('panelactive');
 });
