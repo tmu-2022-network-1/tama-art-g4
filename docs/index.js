@@ -100,8 +100,11 @@ const makeLayout = (array) => {
 }
 
 const renderEvent = (json) => {
+  console.log(json[0]);
+  console.log(json[1]);
+  
   if (!id) {
-    renderResponse(json);
+    renderResponse(json[0]);
     const eventLinks = document.querySelectorAll('.eventImage');
 
     for (const eventLink of eventLinks) {
@@ -109,15 +112,17 @@ const renderEvent = (json) => {
         // console.log("生きてます！");
         document.querySelector('.thumbnail-container').src = e.target.src;
         
-        const eventId = json.find((d) => d.id === e.currentTarget.id);
-        // console.log(eventId);
+        const eventId = json[0].find((d) => d.id === e.currentTarget.id);
+        console.log(eventId);
+
         document.getElementById("thumbnail-title").innerHTML=`${eventId.title}`;
         document.getElementById("thumbnail-comment").innerHTML=`${eventId.comment}`;
 
       };
 
       eventLink.onmousedown = (e) => {
-        const eventId = json.find((d) => d.id === e.currentTarget.id);
+        const eventId = json[0].find((d) => d.id === e.currentTarget.id);
+        const venue = json[1].find((d) => d.id === eventId.venueId);
         console.log("いえ〜い");
         $("#event-detail").addClass('windowactive');
         $("#close-button").addClass('windowactive');
@@ -137,6 +142,14 @@ const renderEvent = (json) => {
         document.getElementById("schedule").innerHTML=`
         ${startYear}年${startMonth+1}月${startDate}日〜${endYear}年${endMonth+1}月${endDate}日
         `;
+        document.getElementById("opening-time").innerHTML=`
+        開館時間：${venue.openingTime}
+        `;
+        document.getElementById("closing-day").innerHTML=`
+        閉館日：${venue.closingDay}
+        `;
+        
+
         document.getElementById("admission").innerHTML=`
         ${eventId.admission}
         `;
@@ -144,14 +157,33 @@ const renderEvent = (json) => {
         ${eventId.url}
         `;
         document.getElementById("eventurl").href=eventId.url;
+
         document.getElementById("venue").innerHTML=`
-        会場情報！
+        <div>${venue.name}</div>
+        <a href="${venue.url}" id="venueurl">${venue.url}</a>
+        `;
+
+        document.getElementById("address").innerHTML=`
+        ${venue.address}
+        <div class="gmap">
+          <iframe src="http://maps.google.co.jp/maps?q=${venue.name}&output=embed&t=m&z=16&hl=ja" frameborder="0" scrolling="no" margin="0" width="100%" height="100%"></iframe>
+        </div>
+        `;
+        
+        document.getElementById("station").innerHTML=`
+        ${venue.station}
+        `;
+        document.getElementById("phone").innerHTML=`
+        ${venue.telephone}
         `;
       }
+
+
     }
     return;
   }
 };
   
-getData("group4").then((json) => renderEvent(json));
+
+getData("group4","venues").then((json) => renderEvent(json));
   
