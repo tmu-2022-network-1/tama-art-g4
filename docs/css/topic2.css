@@ -1,0 +1,21 @@
+/* コンテナの画像たちは、特集記事によってサイズや数が変わるからcssを分けないといけない! */
+.container:nth-child(1) img{
+    width: 40vw;
+}
+
+.container:nth-child(2) img, .container:nth-child(3) img{
+    margin-right: 2vw;
+    width: 18vw;
+}
+
+.container:nth-child(4) img{
+    width: 40vw;
+}
+
+.container:nth-child(5) img{
+    width: 40vw;
+}
+
+.container:nth-child(6) img{
+    width: 40vw;
+}
