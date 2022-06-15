@@ -1,22 +1,51 @@
+.terminal{
+    padding: 6vh 0;
+}
+
 .topic{
-    padding: 4vh;
+    position: relative;
+    padding: 3vh;
     text-align: center;
     font-size: 2rem;
 }
 
-.topic a{
-    padding: 0 .3em 0;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 50%, #f5f5f5 50%);
-    background-position: 0 0;
-    background-size: 200% auto;
-    transition: .3s;
-}
-.topic a:hover{
-    background-position: -100% 0;
-    color: #171717;
+.topic img{
+    width: 40vw;
+    height: 18vh;
+    object-fit: cover;
+    padding: 5px;
+    background-color: #f5f5f5;
+    opacity: 0.6;
 }
 
-.topic a, .topic-footer a{
+.topic img:hover{
+    transform: scale(1.05);
+    opacity: 1;
+    transition: 0.8s cubic-bezier(.27,.78,.48,.97);
+}
+
+.topic p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    color: #f5f5f5;
+    /* padding: 0; */
+    /* background-color: #f5f5f5d0; */
+    /* padding: 0.3em; */
+    /* background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 50%, #f5f5f5 50%);
+    background-position: 0 0;
+    background-size: 200% auto;
+    transition: .3s; */
+}
+
+/* .topic a:hover{
+    background-position: -100% 0;
+    color: #171717;
+} */
+
+.topic-footer a{
     color: #f5f5f5;
 }
 

@@ -14,7 +14,6 @@
 	transition: all 0.6s cubic-bezier(0.76, 0.07, 0.24, 0.96);
 }
 
-/*アクティブクラスがついたら位置を0に*/
 #g-nav.panelactive{
     right: 0;
 }
@@ -22,10 +21,13 @@
 #g-nav-list{
     
 }
+
 /*ラジオボタン*/
 .radio-button-field {
     display:flex;
     flex-flow: column;
+
+    padding-left: 2%;
 
     width: 35vw;
     height: 82%;
@@ -50,6 +52,14 @@
     color: #f5f5f5;
     padding: 1rem 1rem;
     transition: all .2s;
+}
+
+.radio-inline__label:hover{
+    cursor: pointer !important;
+    transform: scale(1.05);
+    /* color: #000000; */
+    background-color: #8c8c8c;
+    transition: 0.4s;
 }
 
 .radio-inline__input:checked + .radio-inline__label {
