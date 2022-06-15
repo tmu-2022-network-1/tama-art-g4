@@ -3,8 +3,13 @@
     width: 40vw;
 }
 
-.container:nth-child(2) img, .container:nth-child(3) img{
-    margin-right: 2vw;
+.container:nth-child(2) img{
+    margin-left: 1vw;
+    width: 18vw;
+}
+
+.container:nth-child(3) img{
+    margin-left: 10vw;
     width: 18vw;
 }
 

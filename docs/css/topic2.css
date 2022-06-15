@@ -3,19 +3,19 @@
     width: 40vw;
 }
 
-.container:nth-child(2) img, .container:nth-child(3) img{
-    margin-right: 2vw;
+.container:nth-child(2) img{
+    margin-left: 1vw;
     width: 18vw;
+}
+
+.container:nth-child(3) img{
+    width: 18vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
 }
 
 .container:nth-child(4) img{
     width: 40vw;
 }
 
-.container:nth-child(5) img{
-    width: 40vw;
-}
 
-.container:nth-child(6) img{
-    width: 40vw;
-}
