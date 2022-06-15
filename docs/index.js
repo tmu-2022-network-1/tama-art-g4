@@ -6,18 +6,19 @@ const items = [];
 
 const renderResponse = (json) => {
 
-  const firstId = json.find((d) => d.id === "1");
+  const firstId = json[0].find((d) => d.id === "1");
   document.querySelector('.thumbnail-container').src = firstId.thumbnail;
   document.getElementById("thumbnail-title").innerHTML=`${firstId.title}`;
   document.getElementById("thumbnail-comment").innerHTML=`${firstId.comment}`;
 
-  for (const event of json.filter(d => d.title !== '')) {
+  for (const event of json[0].filter(d => d.title !== '')) {
 
     items[event.id-1] = document.createElement("div");
-
     items[event.id-1].classList.add("item");
-    if(event.tag_js !== ''){
-      items[event.id-1].classList.add(event.tag_js);
+    
+    const group4Js = json[1].find((d) => d.id === event.id);
+    if(group4Js.tag_js !== ''){
+      items[event.id-1].classList.add(group4Js.tag_js);
     }else{
       items[event.id-1].classList.add('other');
     }
@@ -104,16 +105,17 @@ const renderEvent = (json) => {
   console.log(json[1]);
   
   if (!id) {
-    renderResponse(json[0]);
+    renderResponse(json);
     const eventLinks = document.querySelectorAll('.eventImage');
 
     for (const eventLink of eventLinks) {
       eventLink.onmouseover = (e) => {
         
         const eventId = json[0].find((d) => d.id === e.currentTarget.id);
+        const commentId =json[2].find((d) => d.id === e.currentTarget.id);
         document.querySelector('.thumbnail-container').src = e.target.src;
         document.getElementById("thumbnail-title").innerHTML=`${eventId.title}`;
-        document.getElementById("thumbnail-comment").innerHTML=`${eventId.comment}`;
+        document.getElementById("thumbnail-comment").innerHTML=`${commentId.comment}`;
 
       };
 
@@ -181,5 +183,5 @@ const renderEvent = (json) => {
 };
   
 
-getData("group4","venues").then((json) => renderEvent(json));
+getData("events","venues","group4").then((json) => renderEvent(json));
   
