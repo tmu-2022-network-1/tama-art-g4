@@ -109,25 +109,21 @@ const renderEvent = (json) => {
 
     for (const eventLink of eventLinks) {
       eventLink.onmouseover = (e) => {
-        // console.log("生きてます！");
-        document.querySelector('.thumbnail-container').src = e.target.src;
         
         const eventId = json[0].find((d) => d.id === e.currentTarget.id);
-        console.log(eventId);
-
+        document.querySelector('.thumbnail-container').src = e.target.src;
         document.getElementById("thumbnail-title").innerHTML=`${eventId.title}`;
         document.getElementById("thumbnail-comment").innerHTML=`${eventId.comment}`;
 
       };
 
       eventLink.onmousedown = (e) => {
+        
         const eventId = json[0].find((d) => d.id === e.currentTarget.id);
         const venue = json[1].find((d) => d.id === eventId.venueId);
-        console.log("いえ〜い");
         $("#event-detail").addClass('windowactive');
         $("#close-button").addClass('windowactive');
 
-        // html書き換え！！
         document.getElementById("artist").innerHTML=`
         ${eventId.artist}
         `;
