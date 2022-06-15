@@ -37,13 +37,6 @@ $(".close").click(function () {//ボタンがクリックされたら
 
 });
 
-// $(document).on('click touchend', function(event) {
-//     console.log($(".windowactive"));
-//     if($(".windowactive")){
-//         if (!$(event.target).closest('.event-detail').length) {
-//             $("#event-detail").removeClass('windowactive');
-//         }
-//     }
-//   });
+
 
 

@@ -16,7 +16,7 @@ const renderResponse = (json) => {
     items[event.id-1] = document.createElement("div");
     items[event.id-1].classList.add("item");
     
-    const group4Js = json[1].find((d) => d.id === event.id);
+    const group4Js = json[2].find((d) => d.id === event.id);
     if(group4Js.tag_js !== ''){
       items[event.id-1].classList.add(group4Js.tag_js);
     }else{
