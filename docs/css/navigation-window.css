@@ -19,17 +19,22 @@
     right: 0;
 }
 
-
+#g-nav-list{
+    
+}
 /*ラジオボタン*/
 .radio-button-field {
     display:flex;
     flex-flow: column;
 
-    width: 30vw;
+    width: 35vw;
+    height: 82%;
 
     position: absolute;
-    top: 20%;
+    top: 18%;
+
     left: 10%;
+    overflow-y: scroll;
 
     border: none;
 
