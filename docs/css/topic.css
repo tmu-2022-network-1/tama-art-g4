@@ -1,7 +1,19 @@
 .topic{
-    padding: 5vh;
+    padding: 4vh;
     text-align: center;
     font-size: 2rem;
+}
+
+.topic a{
+    padding: 0 .3em 0;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 50%, #f5f5f5 50%);
+    background-position: 0 0;
+    background-size: 200% auto;
+    transition: .3s;
+}
+.topic a:hover{
+    background-position: -100% 0;
+    color: #171717;
 }
 
 .topic a, .topic-footer a{
@@ -52,7 +64,7 @@
 .topic-footer{
     width: 60vw;
     margin-left: 10vw;
-    padding: 16vh 10vw;
+    padding: 10vh 10vw;
     margin-top: 10vh;
     margin-bottom: 5vh;
     border-top: 1px solid white;
@@ -60,6 +72,7 @@
 }
 
 .topic-footer p{
+    margin: 2vh;
     text-align: center;
     vertical-align: top;
 }
