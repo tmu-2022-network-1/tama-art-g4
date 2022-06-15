@@ -4,11 +4,11 @@
 	 y="0px" viewBox="0 0 317.5 626" style="enable-background:new 0 0 317.5 626;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:url(#SVGID_1_);}
-	.st1{fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;}
-	.st2{fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#171717;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:#171717;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
 </style>
 <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="158.8482" y1="13.7035" x2="158.8482" y2="620.9634">
-	<stop  offset="0" style="stop-color:#000000"/>
+	<stop  offset="0" style="stop-color:#171717"/>
 	<stop  offset="0.2188" style="stop-color:#312D18"/>
 	<stop  offset="0.451" style="stop-color:#5D562E"/>
 	<stop  offset="0.6589" style="stop-color:#7D733F"/>
