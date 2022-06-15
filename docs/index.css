@@ -10,7 +10,6 @@ html {
 
 body {
     position: relative;
-    /* ↑追加しました */
     font-size: 1.4em;
     background: #171717;
     font-family: 'Noto Sans JP',Noto Sans CJK JP,-apple-system-body,BlinkMacSystemFont,Yu Gothic Medium,游ゴシック Medium,YuGothic,游ゴシック体,ヒラギノ角ゴ Pro W3,Hiragino Kaku Gothic Pro,メイリオ,Meiryo,Osaka,ＭＳ Ｐゴシック,MS PGothic,sans-serif;
