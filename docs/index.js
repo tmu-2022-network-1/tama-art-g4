@@ -27,7 +27,7 @@ const renderResponse = (json) => {
       items[event.id-1].classList.add("left-item");
     }
     if(event.thumbnail == ''){
-      groueventp4Js.thumbnail = 'images/dummy.jpg';
+      event.thumbnail = 'images/dummy.jpg';
     }
     items[event.id-1].innerHTML = `
     <figure class="eventImage" id="${event.id}">
