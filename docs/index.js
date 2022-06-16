@@ -26,12 +26,12 @@ const renderResponse = (json) => {
     if((event.id-1)%2 !== 0){
       items[event.id-1].classList.add("left-item");
     }
-    if(event.thumbnail == ''){
-      event.thumbnail = 'images/dummy.jpg';
+    if(group4Js.thumbnail == ''){
+      group4Js.thumbnail = 'images/dummy.jpg';
     }
     items[event.id-1].innerHTML = `
     <figure class="eventImage" id="${event.id}">
-      <img src="${event.thumbnail}" class="image">
+      <img src="${group4Js.thumbnail}" class="image">
     </figure>
     <div class="eventName">
       ${event.title}
