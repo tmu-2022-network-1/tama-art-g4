@@ -7,9 +7,10 @@ const items = [];
 const renderResponse = (json) => {
 
   const firstId = json[0].find((d) => d.id === "1");
+  const firstComment = json[2].find((d) => d.id === "1");
   document.querySelector('.thumbnail-container').src = firstId.thumbnail;
   document.getElementById("thumbnail-title").innerHTML=`${firstId.title}`;
-  document.getElementById("thumbnail-comment").innerHTML=`${firstId.comment}`;
+  document.getElementById("thumbnail-comment").innerHTML=`${firstComment.comment}`;
 
   for (const event of json[0].filter(d => d.title !== '')) {
 
