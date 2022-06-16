@@ -164,7 +164,7 @@ const renderEvent = (json) => {
         document.getElementById("address").innerHTML=`
         ${venue.address}
         <div class="gmap">
-          <iframe src="http://maps.google.co.jp/maps?q=${venue.name}&output=embed&t=m&z=16&hl=ja" frameborder="0" scrolling="no" margin="0" width="100%" height="100%"></iframe>
+          <iframe src="https://maps.google.co.jp/maps?q=${venue.name}&output=embed&t=m&z=16&hl=ja" frameborder="0" scrolling="no" margin="0" width="100%" height="100%"></iframe>
         </div>
         `;
         
