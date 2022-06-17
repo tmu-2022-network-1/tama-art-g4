@@ -50,7 +50,7 @@ $(".radio-inline__input").click(function () {//ラジオボタンがクリック
   let elements = document.getElementsByName('accessible-radio');
   // console.log(elements);
   let len = elements.length;
-  console.log(len);
+  // console.log(len);
   let checkValue = '';
 
   for (let i = 0; i < len; i++){
@@ -59,7 +59,7 @@ $(".radio-inline__input").click(function () {//ラジオボタンがクリック
           checkValue = elements.item(i).value;
       }
   }
-  console.log(checkValue);
+  // console.log(checkValue);
 
   if(checkValue == 'all'){
     var newArray = items;
@@ -102,8 +102,8 @@ const makeLayout = (array) => {
 }
 
 const renderEvent = (json) => {
-  console.log(json[0]);
-  console.log(json[1]);
+  // console.log(json[0]);
+  // console.log(json[1]);
   
   if (!id) {
     renderResponse(json);
